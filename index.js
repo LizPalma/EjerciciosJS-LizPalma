@@ -80,10 +80,10 @@ let edadConductor = 35
 let alturaConductor = "174cm"
 let visionConductor = "9/10"
 
-/*nombreConductor = prompt("ingrese nombre")
+nombreConductor = prompt("ingrese nombre")
 edadConductor = prompt("ingrese edad")
 alturaConductor = prompt("ingrese altura")
-visionConductor = prompt("tipo de vision (1 al 10)")*/
+visionConductor = prompt("tipo de vision (1 al 10)")
 
 if (edadConductor >= 18 && alturaConductor > 150 && visionConductor > 8) {
     console.log(`${nombreConductor}, estás capacitado/a para conducir.`);
@@ -91,27 +91,25 @@ if (edadConductor >= 18 && alturaConductor > 150 && visionConductor > 8) {
     console.log(`${nombreConductor}, no cumples los requisitos para conducir.`);
 }
 
-//ejercicio 7
-let nombre = "Ana"
-let pase = "vip"
+// //ejercicio 7
+
 // Solicitar datos al usuario
-/*
 let nombre = prompt("Ingresa tu nombre:");
 let pase = prompt("¿Tienes un pase? (vip/ normal/ no):");
 
 // Verificar si tiene el mismo nombre o un pase vip
 if (nombre === "Ana" || pase === "vip") {
     console.log("¡Bienvenido/a! Tienes acceso libre.");
-    
-}else if(pase === "si") {
+
+} else if (pase === "si") {
     let usarEntrada = promt("desea usar su entrada si/no")
-    if(usarEntrada === "si")
-    console.log("Bienvenido");
-}else {
+    if (usarEntrada === "si")
+        console.log("Bienvenido");
+} else {
     let comprarEntrada = prompt("¿Deseas comprar una entrada? (si o no):");
     if (comprarEntrada) {
 
-     let dineroDisponible = (prompt("Ingresa tu dinero disponible:"));
+        let dineroDisponible = (prompt("Ingresa tu dinero disponible:"));
         if (dineroDisponible >= 1000) {
             console.log("¡Venta exitosa! Bienvenido/a al evento.");
         } else {
@@ -121,11 +119,11 @@ if (nombre === "Ana" || pase === "vip") {
         console.log("Gracias por tu visita. ¡Hasta luego!");
     }
 }
-*/
+
 
 //ejercicio 8
 // número aleatorio entre 1 y 10
-/*let numeroIncognita = 7
+let numeroIncognita = 7
 
 let numeroIngresado = parseInt(prompt("ingrese num de adivinanza"))
 
@@ -166,10 +164,10 @@ if (numeroIngresado === numeroIncognita) {
     console.log("¡Ganaste! ¡Has adivinado el número!");
 } else {
     console.log("Lo siento sera la proxima.");
-} */
+}
 
 //ejercicio 9
-/*let edadIndividuo = parseInt(prompt("Que edad tienes?"))
+let edadIndividuo = parseInt(prompt("Que edad tienes?"))
 
 
 if (edadIndividuo <= 12) {
@@ -184,15 +182,15 @@ if (edadIndividuo <= 12) {
             if (edadIndividuo > 45) {
                 console.log("Eres un anciano");
             }
-            if (edadIndividuo > 100 ) {
+            if (edadIndividuo > 100) {
                 console.log("¿Realmenmte tienes esa edad?");
             }
         }
     }
-}*/
+}
 
 //ejercicio 10 
-/*
+
 let opciones = {
     piedra: "tijeras",
     papel: "piedra",
@@ -212,7 +210,97 @@ if (!opciones[jugador1] || !opciones[jugador2]) {
 } else {
     console.log("¡Jugador 2 gana! " + jugador2 + " vence a " + jugador1);
 }
-*/
+
 
 //ejercicio 11
 
+let color = prompt("Ingrese color")
+
+switch (color) {
+    case "blanco":
+    case "negro":
+        console.log("Falta de color");
+        break;
+    case "verde":
+        console.log("El color de la naturaleza");
+        break;
+    case "amarillo":
+        console.log("El color del sol");
+        break;
+    case "rojo":
+        console.log("El color del fuego");
+        break;
+    case "marron":
+        console.log("El color de la tierra");
+        break;
+    default:
+        console.log("Excelente elección, no lo teníamos pensado");
+        break;
+}
+
+// ejercicio 12
+
+// Pedir al usuario que ingrese los valores y la operación
+//(parseInt) para convertir una cadena de texto en un número entero
+let valor1 = parseInt(prompt("Ingrese el primer valor:"));
+let valor2 = parseInt(prompt("Ingrese el segundo valor:"));
+let operacion = prompt("Ingrese la operación (suma, resta, multiplicacion o division):").toLowerCase();
+
+// Realizar la operación según la opción ingresada
+let resultado;
+switch (operacion) {
+    case "suma":
+        resultado = valor1 + valor2;
+        break;
+    case "resta":
+        resultado = valor1 - valor2;
+        break;
+    case "multiplicacion":
+        resultado = valor1 * valor2;
+        break;
+    case "division":
+        // (!) verifica si la elección del no está en el objeto
+        if (valor2 !== 0) {
+            resultado = valor1 / valor2;
+        } else {
+            //se utiliza para imprimir mensajes de error en la consola del navegador
+            console.error("ERROR: No se puede dividir entre 0.");
+        }
+        break;
+    default:
+        console.error("ERROR: Operación no válida.");
+}
+
+// Mostrar el resultado o el mensaje de error
+//verifica si la variable resultado tiene un valor asignado distinto de undefined.
+if (resultado !== undefined) {
+    console.log(`El resultado de la ${operacion} es: ${resultado}`);
+}
+
+//ejercicio 13
+
+// Pedir al usuario que ingrese los datos del DNI
+let nombres = prompt("Ingrese su nombre:");
+let apellidos = prompt("Ingrese sus apellidos:");
+let numeroDNI = prompt("Ingrese su número de DNI:");
+let letraDNI = prompt("Ingrese la letra de su DNI (mayúscula):");
+
+
+// Preguntar si los datos son correctos
+let confirmacion = confirm("¿Son correctos los datos ingresados?");
+
+if (confirmacion) {
+    // Crear un objeto 'dni' con los datos ingresados
+    let dni = {
+        nombres,
+        apellidos,
+        numeroDNI,
+        letraDNI
+    };
+
+    // Mostrar los datos del DNI con console.table()
+    console.log("Registro exitoso. Datos del DNI:");
+    console.table(dni);
+} else {
+    console.log("Vuelva a intentarlo en 1 mes.");
+}
