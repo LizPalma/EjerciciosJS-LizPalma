@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgb(232, 241, 241);
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#calculadora{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid black;
+}
+
+#peso{
+    padding: 10px;
+}
+#altura{
+    padding: 10px;
+}
+
+
+button{
+    padding: 5px;
+    background-color: rgb(176, 236, 216);
+    font-weight: bold;
+}
+
+#resultado{
+   text-align: center;
+   padding: 5px;
+}
