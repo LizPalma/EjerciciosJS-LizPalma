@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de moneda</title>
+    <link rel="shortcut icon"
+        href="./png-transparent-computer-icons-currency-trade-currency-converter-text-trademark-service.png"
+        type="image/x-icon">
+    <link rel="stylesheet" href="./conversor.css">
+</head>
+
+<body>
+    <div id="container">
+
+        <h1>Conversor de Monedas</h1>
+        <div id="moneda">
+            Cantidad: <input type="range" id="cantidad" min="0" max="200000" value="0">
+            <span id="valor">0</span>
+            Convertir De:
+            <select id="de" onchange="convertir()">
+                <option value="1">Dolar</option>
+                <option value="1">Peso</option>
+            </select>
+            Corvertir A: 
+            <select id="a" onchange="convertir()">
+                <option value="1">Peso</option>
+                <option value="1">Dolar</option>
+            </select>
+            <h2 id="resultado">Resultado: $0.00</h2>
+        </div>
+    </div>
+
+    <script src="./conversor.js"></script>
+</body>
+
+</html>
