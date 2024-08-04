@@ -15,21 +15,25 @@
     <div id="container">
 
         <h1>Conversor de Monedas</h1>
-        <div id="moneda">
-            Cantidad: <input type="range" id="cantidad" min="0" max="200000" value="0">
-            <span id="valor">0</span>
-            Convertir De:
-            <select id="de" onchange="convertir()">
-                <option value="1">Dolar</option>
-                <option value="1">Peso</option>
-            </select>
-            Corvertir A: 
-            <select id="a" onchange="convertir()">
-                <option value="1">Peso</option>
-                <option value="1">Dolar</option>
-            </select>
-            <h2 id="resultado">Resultado: $0.00</h2>
-        </div>
+
+        <form id="moneda">
+            <p>Selecciona moneda:</p>
+            <div class="monedas">
+                <input type="radio" id="peso" name="cambio">Peso
+                <input type="radio" id="dolar" name="cambio">Dolar
+            </div>
+            <p>Ingrese Monto:</p>
+
+            <input type="number" id="valor" min="1" placeholder="Monto a convertir">
+
+            <input type="button" id="cotizador" value="Cotizar" onclick="convertir()">
+
+            <div>
+                <p id="cambio">El cambio es de:</p>
+            </div>
+        </form>
+
+
     </div>
 
     <script src="./conversor.js"></script>
