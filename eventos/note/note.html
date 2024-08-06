@@ -26,50 +26,52 @@
 
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" >
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button id="search" class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
             </nav>
 
         </div>
-        <div id="notes" class="p-5 ">
-<!-- crar nueva nota -->
+        <!-- crar nueva nota -->
+        <div id="notepad" class="p-5 ">
             <div id="newNote" class="container-fluid p-5 d-flex-colum ">
+                <h1 class="fs-2 border-bottom text-center">New Note</h1>
                 <div class="row-3 ">
                     <div class="col-6 ">
 
-                        <h1 class="fs-2 border-bottom text-center">New Note</h1>
                         <div class="mb-3">
-                            <label for="formGroupExampleInput" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput">
+                            <label for="tituloTexto" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="tituloTexto">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Note</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <label for="texto" class="form-label">Note</label>
+                            <textarea  class="form-control" id="texto" rows="3"></textarea>
                         </div>
 
-                        <button type="button" class="btn btn-outline-success">Send</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
+                        <button onclick="guardarNota()" id="guardar" type="button" class="btn btn-outline-success">Send</button>
+                        <button onclick="limpiarNota()" id="limpiar" type="button" class="btn btn-outline-danger">Delete</button>
                     </div>
 
                 </div>
-
+                <div>
+                    <div id="container-note" class="row"></div>
+                </div>
 
             </div>
 <!-- switch -->
             <div id="switch" class="">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault"><span class="fs-4 fw-bold">Performed</span></label>
+                    <input class="form-check-input" type="checkbox" role="switch" id="filtroTexto">
+                    <label class="form-check-label" for="filtroTexto"><span class="fs-4 fw-bold">Performed</span></label>
                 </div>
             </div>
 <!-- notas -->
-            <div id="cards" class="container-fluid p-5 bg-light border border-info rounded-1">
+            <div id="notes" class="container-fluid p-5 bg-light border border-info rounded-1">
 
                 <div class="card container-fluid w-25 p-3">
                     <div class="form-check">
                         <label class="form-check-label p-2">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <input class="form-check-input" type="checkbox" value="" id="Checked" checked>
                         </label>
                       </div>
                     <div class="card-body">
